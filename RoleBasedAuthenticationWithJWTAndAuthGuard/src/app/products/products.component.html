@@ -1,0 +1,15 @@
+<p *ngIf="errorStatus" style="text-align: center;margin-top: 5px; color: red;font-size: 20px;"><b>{{errorDescription}}</b></p>
+<div class="container mt-5">
+    <div class="card" style="padding: 20px;">
+        <form #productForm="ngForm" (ngSubmit)="product(productForm)">
+            <input type="text" ngModel name="productName" id="productName" placeholder="Enter product name" class="form-control mb-3">
+            <input type="text" ngModel name="projectImage" id="projectImage" placeholder="Enter product image" class="form-control mb-3">
+            <input type="text" ngModel name="productRate" id="productRate" placeholder="Enter product rate" class="form-control mb-3">
+            <input type="text" ngModel name="productExpiry" id="productExpiry" placeholder="Enter product expiry" class="form-control mb-3">
+            <input type="text" ngModel name="productManufacture" id="productManufacture" placeholder="Enter product manufacture" class="form-control mb-3">
+            <input type="text" ngModel name="productAvailable" id="productAvailable" placeholder="Enter product available" class="form-control mb-3">
+            <input type="text" ngModel name="user" id="user" hidden class="form-control mb-3">
+            <input type="submit" value="A&nbsp;D&nbsp;D&nbsp; &nbsp;&nbsp;P&nbsp;R&nbsp;O&nbsp;D&nbsp;U&nbsp;C&nbsp;T&nbsp;" class="form-control" style="background-color: black;color: white;">
+        </form>
+    </div>
+</div>

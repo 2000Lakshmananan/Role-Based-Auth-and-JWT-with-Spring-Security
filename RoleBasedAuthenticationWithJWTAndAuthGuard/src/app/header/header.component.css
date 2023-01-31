@@ -1,0 +1,72 @@
+.navbar-brand, a{
+    cursor: pointer;
+}
+
+/* .notifications{
+    width: 300px;
+    height: 200px;
+    background: red;
+    animation: notify 5s infinite;
+    color: white;
+}
+
+@keyframes notify{
+    from {background-color: red;}
+    to {background-color: rgb(0, 255, 225);}
+} */
+
+.btnn {
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-right: 50px;
+    margin-right: 10px;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-decoration: none;
+    position: relative;
+}
+.badge {
+    margin-right: 15px;
+    margin-top: 10px;
+    background-color: #777;
+    border-radius: 10px;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    min-width: 10px;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.badge.badge-corner {
+    color: #fff !important;
+    position: absolute !important;
+    right: -6px !important;
+    top: -8px !important;
+}
+.btn-clean {
+    color: white;
+}
+span.badge-aqua {
+    background: #19c609 none repeat scroll 0 0 !important;
+}
+.size-20 {
+    margin-right: 20px;
+    font-size: 30px !important;
+    line-height: 26px !important;
+    margin-top: 0px;
+}
+
+
+

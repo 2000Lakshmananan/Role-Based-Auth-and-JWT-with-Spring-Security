@@ -1,0 +1,18 @@
+<div class="container">
+        <div class="row">
+            <div class="col-sm-3" *ngFor="let product of productsList">
+                <div class="card">
+                    <p class="card-text" style="background-color: black;color: white;border-radius: 10px 10px 0px 0px;">#{{1000 + product.id}}</p>
+                    <img class="card-img-top img-fluid" [src]="product.projectImage" alt="product">
+                    <div class="card-block">
+                        <h4 class="card-title">{{product.productName}}</h4>
+                        <p class="card-text">Rs. {{product.productRate}}/-</p>
+                        <p class="card-text">{{product.productManufacture}}</p>
+                        <p class="btn btn-info"><small class="text-muted" (click)="buy(product.id)">BUY NOW</small></p>&nbsp;
+                        <p class="btn btn-warning"><small class="text-muted" (click)="card(product.id)">ADD TO CARD</small></p>
+                        <p class="card-text" style="margin-top: -10px;"><small class="text-muted" *ngIf="product.productExpiry">{{product.productExpiry}}</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

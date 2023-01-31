@@ -1,0 +1,40 @@
+<div class="vcv-container">
+    <ng-container *ngFor="let product of productInteractionList">
+        <ng-container *ngIf="product.approval === 'Approved';">
+            <div class="vce-message-box vce vce-message-box-style--success">
+                <div class="vce-message-box-inner">
+                    <span class="vce-message-box-icon material-icons">
+                        <i class="fa fa-check"></i>
+                    </span>
+                    <span class="vce-message-box-text">
+                        <p>&nbsp;&nbsp;&nbsp; <b>#{{1000 + product.id}} - Product ID {{product.productId}}, Your purchase of {{product.productNeed}} Nos. is approved.</b></p>
+                    </span>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="product.approval === null">
+            <div class="vce-message-box vce vce-message-box-style--warning">
+                <div class="vce-message-box-inner">
+                    <span class="vce-message-box-icon material-icons">
+                        &nbsp;<i class="fa fa-exclamation"></i>
+                    </span>
+                    <span class="vce-message-box-text">
+                        <p>&nbsp;&nbsp;&nbsp; <b>#{{1000 + product.id}} - Product ID {{product.productId}}, Your purchase of {{product.productNeed}} Nos. is waiting for approval.</b></p>
+                    </span>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="product.approval === 'Rejected'">
+            <div class="vce-message-box vce vce-message-box-style--error">
+                <div class="vce-message-box-inner">
+                    <span class="vce-message-box-icon material-icons">
+                        <i class="fa fa-ban"></i>
+                    </span>
+                    <span class="vce-message-box-text">
+                        <p>&nbsp;&nbsp;&nbsp; <b>#{{1000 + product.id}} - Product ID {{product.productId}}, Your purchase of {{product.productNeed}} Nos. is rejected.</b></p>
+                    </span>
+                </div>
+            </div>
+        </ng-container>
+    </ng-container>
+</div>

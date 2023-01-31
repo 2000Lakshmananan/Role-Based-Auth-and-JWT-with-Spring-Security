@@ -1,0 +1,46 @@
+<div class="mytable">
+    <p *ngIf="timeOutStatus" style="text-align: center;color: rgba(206, 232, 8, 0.781);font-size: 20px;"><b>{{timeOutDescription}}</b></p>
+<hr>
+<h1>Roles</h1>
+<hr>
+<table  style="text-align: center;">
+    <thead  style="text-align: center;">
+        <tr>
+            <th style="text-align: center;">Role Name</th>
+            <th style="text-align: center;">Role Description</th>
+            <th style="text-align: center;">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let role of roles">
+            <td style="text-align: center;">{{role.roleName}}</td>
+            <td style="text-align: center;">{{role.roleDescription}}</td>
+            <td (click)="deleteRole(role.roleName)" *ngIf="role.roleName != 'Admin';else disabled" style="text-align: center;color: rgb(8, 201, 56);cursor: pointer;"><i class="fa fa-trash" style="font-size: 25px;"></i></td>
+            <ng-template #disabled><td style="text-align: center;color: red;cursor: not-allowed;"><i class="fa fa-trash" style="font-size: 25px;" ></i></td></ng-template>
+        </tr>
+    </tbody>
+</table>
+<hr style="border: 4px solid red;">
+<hr>
+<h1>Users</h1>
+<hr>
+<table>
+    <thead>
+        <tr>
+            <th style="text-align: center;">Full Name</th>
+            <th style="text-align: center;">Username</th>
+            <th style="text-align: center;">Role</th>
+            <th style="text-align: center;">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td style="text-align: center;">{{user.userFirstName}}</td>
+            <td style="text-align: center;">{{user.userName}}</td>
+            <td style="text-align: center;">{{user.userLastName}}</td>
+            <td style="text-align: center;" *ngIf="user.userLastName != 'Admin';else elsepart" (click)="deleteUser(user.userName)"  style="text-align: center;color: rgb(8, 201, 40);cursor: pointer;"><i class="fa fa-trash" style="font-size: 25px;"></i></td>
+            <ng-template #elsepart><td style="text-align: center; color: red;cursor: not-allowed;"><i class="fa fa-trash" style="font-size: 25px;"></i></td></ng-template>
+        </tr>
+    </tbody>
+</table>
+</div>

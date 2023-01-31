@@ -1,0 +1,15 @@
+<p *ngIf="errorStatus" style="text-align: center;margin-top: 5px; color: red;"><b>{{errorDescription}}</b></p>
+<div class="container mt-5">
+    <div class="card" style="padding: 20px;">
+        <form #signupForm="ngForm" (ngSubmit)="signup(signupForm)">
+            <input type="text" ngModel name="userFirstName" id="userFirstName" placeholder="Enter your full name" class="form-control mb-3">
+            <input type="email" ngModel name="userName" id="userName" placeholder="Enter your email" class="form-control mb-3">
+            <input type="password" ngModel name="userPassword" id="userPassword" placeholder="Enter your password" class="form-control mb-3">
+            <select ngModel name="userLastName" id="userLastName" class="form-control mb-3" required>
+                <option value="yes" disabled selected>Select your role</option>
+                <option *ngFor="let role of roles" [value]="role.roleName">{{role.roleName}}</option>
+            </select>
+            <input type="submit" value="Signup" class="btn btn-success form-control">
+        </form>
+    </div>
+</div>

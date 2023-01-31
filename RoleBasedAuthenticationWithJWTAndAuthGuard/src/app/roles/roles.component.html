@@ -1,0 +1,14 @@
+<p *ngIf="errorStatus" style="text-align: center;margin-top: 5px; color: red;font-size: 20px;">
+    <b>{{errorDescription}}</b></p>
+<div class="container mt-5">
+    <div class="card" style="padding: 20px;">
+        <form #roleForm="ngForm" (ngSubmit)="role(roleForm)">
+            <input type="text" ngModel name="roleName" id="roleName" placeholder="Enter role name"
+                class="form-control mb-3">
+            <input type="text" ngModel name="roleDescription" id="roleDescription" placeholder="Enter role description"
+                class="form-control mb-3">
+            <input type="submit" value="A&nbsp;d&nbsp;d &nbsp;&nbsp;&nbsp;N&nbsp;o&nbsp;w&nbsp;!&nbsp;!&nbsp;!"
+                class="form-control" style="background-color: black;color: white;">
+        </form>
+    </div>
+</div>

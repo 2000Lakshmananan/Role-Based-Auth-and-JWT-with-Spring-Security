@@ -1,0 +1,23 @@
+<div class="container mt-5" *ngIf="listIsNull">
+    <div class="text-center" style="color: white;padding: 20px;">
+        <h1>None !!!</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3" *ngFor="let product of productList">
+            <div class="card">
+                <p class="card-text" style="background-color: black;color: white;border-radius: 10px 10px 0px 0px;">#{{1000 + product.id}}</p>
+                <img class="card-img-top img-fluid" [src]="product.projectImage" alt="product">
+                <div class="card-block">
+                    <h4 class="card-title">{{product.productName}}</h4>
+                    <p class="card-text">Rs. {{product.productRate}}/-</p>
+                    <p class="card-text">{{product.productManufacture}}, Company</p>
+                    <p class="btn btn-info"><small class="text-muted" (click)="buy(product.id)">BUY NOW</small></p>&nbsp;
+                    <p class="card-text" style="margin-top: -10px;"><small class="text-muted" *ngIf="product.productExpiry">{{product.productExpiry}}</small></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" (click)="logout()" style="color:black"><b>LK Medical Care</b></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" (click)="tohome()">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" (click)="naviAdmin()"
+            *ngIf="userService.roleMatch(['Admin'])" style="cursor: pointer;">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" (click)="naviProducts()"
+            *ngIf="userService.roleMatch(['Admin'])" style="cursor: pointer;">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/approvals"
+            *ngIf="userService.roleMatch(['Admin'])" style="cursor: pointer;">Approvals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/userproduct" *ngIf="userService.roleMatch(['User'])">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/usercard" *ngIf="userService.roleMatch(['User'])">My Card</a>
+        </li>
+      </ul>
+      <a class="btnn btn-clean" *ngIf="userService.roleMatch(['User'])">
+        <i class="fa fa-envelope size-20" routerLink="/notification"></i>
+      </a>
+      <button class="btn btn-success" aria-current="page" routerLink="/role" *ngIf="userService.roleMatch(['Admin'])"
+        style="font-size: 18px; width: 150px;margin-right: 20px;color: black;"><i
+          class="fa fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;Role</button>
+      <button class="btn btn-success" aria-current="page" routerLink="/product" *ngIf="userService.roleMatch(['Admin'])"
+      style="font-size: 18px; width: 150px;margin-right: 20px;color: black;"><i
+          class="fa fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;Product</button>
+      <img src="https://icons.veryicon.com/png/o/business/background-management-system/change-password-5.png" 
+      class="fa fa-key" *ngIf="userService.roleMatch(['User'])" style="margin-right: 30px;font-size: 30px;color: rgb(124, 228, 21);cursor: pointer;height: 40px; width: 40px;" (click)="updateUser()"/>
+      
+      <button *ngIf="!isLoggedIn()" type="submit" class="btn btn-success" routerLink="/login">Login</button>
+      <button *ngIf="!isLoggedIn()" type="submit" class="btn btn-danger" routerLink="/signup">Signup</button>
+      <button *ngIf="isLoggedIn()" type="submit" class="btn btn-warning" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</nav>
+<p *ngIf="timeOutStatus" style="text-align: center;color: rgba(206, 232, 8, 0.781);margin-top: 15px;font-size: 20px;"><b>{{timeOutDescription}}</b>&nbsp;&nbsp;&nbsp;<img src="https://gifimage.net/wp-content/uploads/2018/04/loading-gif-transparent-background-6.gif" style="width: 60px;height: 60px;"></p>
+

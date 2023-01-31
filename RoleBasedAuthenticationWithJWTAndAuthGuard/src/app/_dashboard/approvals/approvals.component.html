@@ -1,0 +1,29 @@
+<div class="mytable">
+    <p *ngIf="timeOutStatus" style="text-align: center;color: rgba(206, 232, 8, 0.781);font-size: 20px;">
+        <b>{{timeOutDescription}}</b></p>
+    <hr>
+    <table style="text-align: center;">
+        <thead style="text-align: center;">
+            <tr>
+                <th style="text-align: center;">Approval ID</th>
+                <th style="text-align: center;">Product ID</th>
+                <th style="text-align: center;">User</th>
+                <th style="text-align: center;">Product Needed</th>
+                <th style="text-align: center;">Requested Date</th>
+                <th style="text-align: center;" colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let product of productsList">
+                <tr *ngIf="product.approval === null">
+                    <td style="text-align: center;">{{product.id}}</td>
+                    <td style="text-align: center;">{{product.productId}}</td>
+                    <td style="text-align: center;">{{product.userName}}</td>
+                    <td style="text-align: center;">{{product.productNeed}}</td>
+                    <td style="text-align: center;">{{product.approvedDate}}</td>
+                    <td style="text-align: center;"><button class="btn btn-success" (click)="productApprove(product.id)" >Approve</button></td>
+                    <td style="text-align: center;"><button class="btn btn-danger" (click)="productReject(product.id)" >Reject</button></td>
+                </tr>
+            </ng-container >
+        </tbody>
+    </table>
